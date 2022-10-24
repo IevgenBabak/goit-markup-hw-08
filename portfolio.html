@@ -20,6 +20,17 @@
       <div class="container header-container">
         <nav class="navigation">
           <a href="./index.html" class="logo logo__header"><span class="accent">Web</span>Studio</a>
+          <button
+            type="button"
+            class="menu-toggle js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <svg width="40" height="40" aria-label="Вмикач мобільного меню">
+              <use class="icon-menu" href="./images/sprite.svg#icon-menu_40px"></use>
+            </svg>
+          </button>
+
           <ul class="navigation__list">
             <li class="navigation__item">
               <a class="navigation__link link" href="./index.html">Студія</a>
@@ -31,26 +42,88 @@
               <a class="navigation__link link" href="./index.html">Контакти</a>
             </li>
           </ul>
+          <div class="container-contacts">
+            <ul class="container-contacts__mailito-tel">
+              <li>
+                <a class="container-contacts__item link" href="mailto:info@devstudio.com">
+                  <svg class="container-contacts__icon icon" width="16px" height="12px">
+                    <use class="icon-envelope" href="./images/sprite.svg#icon-envelope"></use></svg
+                  >info@devstudio.com
+                </a>
+              </li>
+              <li>
+                <a class="container-contacts__item link" href="tel:+380961111111">
+                  <svg class="container-contacts__icon icon" width="10px" height="16px">
+                    <use
+                      class="icon-smartphone"
+                      href="./images/sprite.svg#icon-smartphone"
+                    ></use></svg
+                  >+38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu-container js-menu-container" id="mobile-menu">
+            <button type="button" class="menu-toggle js-close-menu">
+              <svg width="40" height="40" aria-label="Вимикач мобільного меню">
+                <use class="icon-cross" href="./images/sprite.svg#icon-close_40px"></use>
+              </svg>
+            </button>
+            <div class="navigation-mob">
+              <ul class="navigation__list">
+                <li class="navigation__item">
+                  <a class="navigation__link link" href="./index.html">Студія</a>
+                </li>
+                <li class="navigation__item">
+                  <a class="navigation__link current link" href="./portfolio.html">Портфоліо</a>
+                </li>
+                <li class="navigation__item">
+                  <a class="navigation__link link" href="./index.html">Контакти</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="container-contacts">
+                <ul class="container-contacts__mailito-tel">
+                  <li class="container-contacts__line">
+                    <a class="container-contacts__item link tel" href="tel:+380961111111">
+                      <svg class="container-contacts__icon icon" width="10px" height="16px">
+                        <use href="./images/sprite.svg#icon-smartphone"></use></svg
+                      >+38 096 111 11 11</a
+                    >
+                  </li>
+                  <li class="container-contacts__line">
+                    <a
+                      class="container-contacts__item link mailto"
+                      href="mailto:info@devstudio.com"
+                    >
+                      <svg class="container-contacts__icon icon" width="16px" height="12px">
+                        <use href="./images/sprite.svg#icon-envelope"></use></svg
+                      >info@devstudio.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="container-link">
+                <ul class="container-link__list">
+                  <li class="container-link__li">
+                    <a class="container-link__item" href="">Instagram</a>
+                  </li>
+                  <li class="container-link__li">
+                    <a class="container-link__item" href="">Twitter</a>
+                  </li>
+                  <li class="container-link__li">
+                    <a class="container-link__item" href="">Facebook</a>
+                  </li>
+                  <li class="container-link__li">
+                    <a class="container-link__item last-child" href="">Linkedin</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </nav>
-        <!-- 2 блок контакти -->
-        <div class="container-contacts">
-          <ul class="container-contacts__mailito-tel">
-            <li>
-              <a class="container-contacts__item link" href="mailto:info@devstudio.com">
-                <svg class="container-contacts__icon icon" width="16px" height="12px">
-                  <use href="./images/sprite.svg#icon-envelope"></use></svg
-                >info@devstudio.com
-              </a>
-            </li>
-            <li>
-              <a class="container-contacts__item link" href="tel:+380961111111">
-                <svg class="container-contacts__icon icon" width="10px" height="16px">
-                  <use href="./images/sprite.svg#icon-smartphone"></use></svg
-                >+38 096 111 11 11</a
-              >
-            </li>
-          </ul>
-        </div>
       </div>
     </header>
     <main>
@@ -66,7 +139,7 @@
               <button class="portfolio__link-filter" type="button">Веб-сайти</button>
             </li>
             <li class="portfolio__filter-btn">
-              <button class="portfolio__link-filter" type="button">Додатки</button>
+              <button class="portfolio__link-filter border-pluse" type="button">Додатки</button>
             </li>
             <li class="portfolio__filter-btn">
               <button class="portfolio__link-filter" type="button">Дизайн</button>
@@ -82,10 +155,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_technokryak.jpg"
+                    srcset="
+                      ./images/img_technokryak/img_technokryak-mobile.jpg     450w,
+                      ./images/img_technokryak/img_technokryak-tablet.jpg     354w,
+                      ./images/img_technokryak/img_technokryak-desktop.jpg    370w,
+                      ./images/img_technokryak/img_technokryak-mobile-x2.jpg  900w,
+                      ./images/img_technokryak/img_technokryak-tablet-x2.jpg  708w,
+                      ./images/img_technokryak/img_technokryak-desktop-x2.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_technokryak/img_technokryak-mobile.jpg"
                     alt="зображення екрану ноутбука з карточками з фотографіями людей"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -104,10 +184,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_poster_new-orlean_vs.jpg"
+                    srcset="
+                      ./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-mobile.jpg     450w,
+                      ./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-tablet.jpg     354w,
+                      ./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-desktop.jpg    370w,
+                      ./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-mobile-x2.jpg  900w,
+                      ./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-tablet-x2.jpg  708w,
+                      ./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_poster_new-orlean_vs/img_poster_new-orlean_vs-mobile.jpg"
                     alt="зображення двох спортсменів баскетболистів з м'ячем"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -128,10 +215,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_restorant_seafood.jpg"
+                    srcset="
+                      ./images/img_restorant_seafood/img_restorant_seafood-mobile.jpg     450w,
+                      ./images/img_restorant_seafood/img_restorant_seafood-tablet.jpg     354w,
+                      ./images/img_restorant_seafood/img_restorant_seafood-desktop.jpg    370w,
+                      ./images/img_restorant_seafood/img_restorant_seafood-mobile-x2.jpg  900w,
+                      ./images/img_restorant_seafood/img_restorant_seafood-tablet-x2.jpg  708w,
+                      ./images/img_restorant_seafood/img_restorant_seafood-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_restorant_seafood/img_restorant_seafood-mobile.jpg"
                     alt="зображення риби"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -150,10 +244,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_projekt_prime.jpg"
+                    srcset="
+                      ./images/img_projekt_prime/img_projekt_prime-mobile.jpg     450w,
+                      ./images/img_projekt_prime/img_projekt_prime-tablet.jpg     354w,
+                      ./images/img_projekt_prime/img_projekt_prime-desktop.jpg    370w,
+                      ./images/img_projekt_prime/img_projekt_prime-mobile-x2.jpg  900w,
+                      ./images/img_projekt_prime/img_projekt_prime-tablet-x2.jpg  708w,
+                      ./images/img_projekt_prime/img_projekt_prime-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_projekt_prime/img_projekt_prime-mobile.jpg"
                     alt="зображення навушників"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -172,10 +273,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_project_boxes.jpg"
+                    srcset="
+                      ./images/img_project_boxes/img_project_boxes-mobile.jpg     450w,
+                      ./images/img_project_boxes/img_project_boxes-tablet.jpg     354w,
+                      ./images/img_project_boxes/img_project_boxes-desktop.jpg    370w,
+                      ./images/img_project_boxes/img_project_boxes-mobile-x2.jpg  900w,
+                      ./images/img_project_boxes/img_project_boxes-tablet-x2.jpg  700w,
+                      ./images/img_project_boxes/img_project_boxes-desktop-2x.jpg 540w
+                    "
+                    src="./images/img_project_boxes/img_project_boxes-mobile.jpg"
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
                     alt="зображення двох коробок"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -194,10 +302,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_no_borders.jpg"
+                    srcset="
+                      ./images/img_no_borders/img_no_borders-mobile.jpg     450w,
+                      ./images/img_no_borders/img_no_borders-tablet.jpg     354w,
+                      ./images/img_no_borders/img_no_borders-desktop.jpg    370w,
+                      ./images/img_no_borders/img_no_borders-mobile-x2.jpg  900w,
+                      ./images/img_no_borders/img_no_borders-tablet-x2.jpg  708w,
+                      ./images/img_no_borders/img_no_borders-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_no_borders/img_no_borders-mobile.jpg"
                     alt="зображення монітору комп'ютера з відкритим контентом сайта"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -218,10 +333,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_book_limited_edition.jpg"
+                    srcset="
+                      ./images/img_book_limited_edition/img_book_limited_edition-mobile.jpg     450w,
+                      ./images/img_book_limited_edition/img_book_limited_edition-tablet.jpg     354w,
+                      ./images/img_book_limited_edition/img_book_limited_edition-desktop.jpg    370w,
+                      ./images/img_book_limited_edition/img_book_limited_edition-mobile-x2.jpg  900w,
+                      ./images/img_book_limited_edition/img_book_limited_edition-tablet-x2.jpg  708w,
+                      ./images/img_book_limited_edition/img_book_limited_edition-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px,  450px"
+                    src="./images/img_book_limited_edition/img_book_limited_edition-mobile.jpg"
                     alt="зображення розгорнутої книги з фотографіями"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -240,10 +362,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_projekt_lab.jpg"
+                    srcset="
+                      ./images/img_projekt_lab/img_projekt_lab-mobile.jpg     450w,
+                      ./images/img_projekt_lab/img_projekt_lab-tablet.jpg     354w,
+                      ./images/img_projekt_lab/img_projekt_lab-desktop.jpg    370w,
+                      ./images/img_projekt_lab/img_projekt_lab-mobile-x2.jpg  900w,
+                      ./images/img_projekt_lab/img_projekt_lab-tablet-x2.jpg  708w,
+                      ./images/img_projekt_lab/img_projekt_lab-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_projekt_lab/img_projekt_lab-mobile.jpg"
                     alt="зображення бірки для одягу"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -262,10 +391,17 @@
                 <div class="portfolio__box-link-wrap">
                   <img
                     class="img-block"
-                    src="./images/img_growing_business.jpg"
+                    srcset="
+                      ./images/img_growing_business/img_growing_business.-mobile.jpg     450w,
+                      ./images/img_growing_business/img_growing_business.-tablet.jpg     354w,
+                      ./images/img_growing_business/img_growing_business.-desktop.jpg    370w,
+                      ./images/img_growing_business/img_growing_business.-mobile-x2.jpg  900w,
+                      ./images/img_growing_business/img_growing_business.-tablet-x2.jpg  708w,
+                      ./images/img_growing_business/img_growing_business.-desktop-2x.jpg 540w
+                    "
+                    sizes="(min-width: 1170px) 370px, (min-width: 768px) 354px, 450px"
+                    src="./images/img_growing_business/img_growing_business.-mobile.jpg"
                     alt="зображення розкритого ноутбуку"
-                    width="370"
-                    height="294"
                   />
                   <p class="portfolio__box-link-details">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
@@ -283,70 +419,72 @@
         </div>
       </section>
     </main>
-    <!--  блок футер -->
+    <!-- 7 блок футер -->
     <footer class="ground-footer">
       <div class="container footer">
-        <div class="logo-adress-tel">
-          <a href="./index.html" class="logo ground-footer__logo"
-            ><span class="accent">Web</span>Studio</a
-          >
-          <address class="ground-footer__address-style">
-            <ul class="ground-list">
-              <li class="ground-footer-contacts">
-                <a
-                  class="ground-footer__link-address link"
-                  href="https://www.google.com/maps/d/embed?mid=10uSM3H-mIU3GznYo2szRIEphczw&hl=en_US&ehbc=2E312F"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  >м. Київ, пр-т Лесі Українки, 26</a
-                >
+        <div class="ground-footer__tablet">
+          <div class="logo-adress-tel">
+            <a href="./index.html" class="logo ground-footer__logo"
+              ><span class="accent">Web</span>Studio</a
+            >
+            <address class="ground-footer__address-style">
+              <ul class="ground-list">
+                <li class="ground-footer-contacts">
+                  <a
+                    class="ground-footer__link-address link"
+                    href="https://www.google.com/maps/d/embed?mid=10uSM3H-mIU3GznYo2szRIEphczw&hl=en_US&ehbc=2E312F"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    >м. Київ, пр-т Лесі Українки, 26</a
+                  >
+                </li>
+                <li class="ground-footer__contacts">
+                  <a class="ground-footer__mailto-tel link" href="mailto:info@devstudio.com"
+                    >info@devstudio.com</a
+                  >
+                </li>
+                <li class="ground-footer__contacts">
+                  <a class="ground-footer__mailto-tel link" href="tel:+380961111111"
+                    >+38 096 111 11 11</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="ground-footer__join">
+            <p class="ground-footer__text">приєднуйтесь</p>
+            <ul class="ground-footer__social-web">
+              <li>
+                <a href="" class="ground-footer__social-link">
+                  <svg class="ground-footer__icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-instagram"></use></svg
+                ></a>
               </li>
-              <li class="ground-footer__contacts">
-                <a class="ground-footer__mailto-tel link" href="mailto:info@devstudio.com"
-                  >info@devstudio.com</a
-                >
+              <li>
+                <a href="" class="ground-footer__social-link">
+                  <svg class="ground-footer__icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-twitter"></use></svg
+                ></a>
               </li>
-              <li class="ground-footer__contacts">
-                <a class="ground-footer__mailto-tel link" href="tel:+380961111111"
-                  >+38 096 111 11 11</a
-                >
+              <li>
+                <a href="" class="ground-footer__social-link">
+                  <svg class="ground-footer__icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-facebook"></use></svg
+                ></a>
+              </li>
+              <li>
+                <a href="" class="ground-footer__social-link">
+                  <svg class="ground-footer__icon" width="20px" height="20px">
+                    <use href="./images/sprite.svg#icon-linkedin"></use></svg
+                ></a>
               </li>
             </ul>
-          </address>
-        </div>
-        <div class="ground-footer__join">
-          <p class="ground-footer__text">приєднуйтесь</p>
-          <ul class="ground-footer__social-web">
-            <li>
-              <a href="" class="ground-footer__social-link">
-                <svg class="ground-footer__icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-instagram"></use></svg
-              ></a>
-            </li>
-            <li>
-              <a href="" class="ground-footer__social-link">
-                <svg class="ground-footer__icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-twitter"></use></svg
-              ></a>
-            </li>
-            <li>
-              <a href="" class="ground-footer__social-link">
-                <svg class="ground-footer__icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-facebook"></use></svg
-              ></a>
-            </li>
-            <li>
-              <a href="" class="ground-footer__social-link">
-                <svg class="ground-footer__icon" width="20px" height="20px">
-                  <use href="./images/sprite.svg#icon-linkedin"></use></svg
-              ></a>
-            </li>
-          </ul>
+          </div>
         </div>
         <div class="ground-footer__subscribe">
           <p class="ground-footer__text">підпишиться на розсилку</p>
           <form class="ground-footer__form">
-            <label>
+            <label class="ground-footer__label">
               <input class="ground-footer__input" type="email" name="email" placeholder="E-mail" />
             </label>
 
@@ -360,5 +498,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
