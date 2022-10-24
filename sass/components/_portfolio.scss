@@ -1,7 +1,12 @@
 .portfolio {
     &__main {
-        padding-top: 94px;
-        padding-bottom: 94px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        @include desktop {
+            padding-top: 94px;
+            padding-bottom: 94px;
+        }
     }
 
     &__title {
@@ -30,6 +35,19 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 354px 354px;
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
     }
 
     &__box-link-details {
@@ -68,4 +86,8 @@
     &__box-link:focus &__box-link-details {
         transform: translateY(0);
     }
+}
+
+.no-scroll {
+    overflow: hidden;
 }

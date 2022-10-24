@@ -1,0 +1,234 @@
+.menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.menu-toggle.js-close-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--brand-color);
+    cursor: pointer;
+    transition: fill var(--time-cubic-bezier);
+
+    &:hover,
+    &:focus {
+        fill: var(--accent-color);
+    }
+}
+
+.icon-menu {
+    transition: fill var(--time-cubic-bezier);
+
+    &:hover,
+    &:focus {
+        fill: var(--accent-color);
+    }
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: var(--brand-color);
+    padding: 32px;
+    font-size: 20px;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+    transform: translateX(0);
+
+    @media screen and (min-width: 767px) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.navigation {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    @media screen and (min-width: 320px) {
+        justify-content: space-between;
+        min-height: 80px;
+    }
+
+    @include tablet {
+        margin-left: 0;
+        width: 480px;
+        display: flex;
+        align-items: center;
+    }
+
+    @include desktop {
+        width: 1170px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        padding-top: 32px;
+
+        @include tablet {
+            padding-top: 0;
+        }
+
+        @include desktop {
+            padding-top: 0;
+        }
+    }
+
+    &__item:last-child {
+        padding-top: 32px;
+
+        @include tablet {
+            padding-top: 0;
+        }
+
+        @include desktop {
+            padding-top: 0;
+        }
+    }
+
+    &__list {
+        @media screen and (min-width: 480px) {
+            display: none;
+        }
+
+        @include tablet {
+            margin-left: 87px;
+            display: flex;
+            gap: 50px;
+        }
+
+        @include desktop {
+            margin-left: 93px;
+            margin-right: 315px;
+            display: flex;
+            gap: 50px;
+        }
+    }
+
+    &__link.link {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 1.18;
+        letter-spacing: 0.02em;
+        color: var(--second-black-color);
+        text-decoration: none;
+        display: block;
+        padding-left: 25px;
+        transition: color var(--time-cubic-bezier);
+
+        @include tablet {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.02em;
+            color: var(--second-black-color);
+            text-decoration: none;
+            display: block;
+            padding: 32px 0;
+            transition: color var(--time-cubic-bezier);
+        }
+
+        @include desktop {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.02em;
+            color: var(--second-black-color);
+            text-decoration: none;
+            display: block;
+            padding: 32px 0;
+            transition: color var(--time-cubic-bezier);
+        }
+    }
+
+    &__link.link.current {
+        color: var(--accent-color);
+        display: block;
+        position: relative;
+
+        @include tablet {
+            color: var(--accent-color);
+            display: block;
+            position: relative;
+        }
+
+        @include desktop {
+            color: var(--accent-color);
+            display: block;
+            position: relative;
+        }
+    }
+
+    &__link.link.current::after {
+        @include tablet {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: -1px;
+        }
+
+        @include desktop {
+            display: block;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: -1px;
+        }
+    }
+}
+
+.navigation>.navigation__list {
+    display: none;
+
+    @include tablet {
+        display: flex;
+    }
+}
+
+.menu-container.is-open .navigation__list {
+    display: block;
+}
+
+.menu-container.is-open .container-contacts__mailito-tel {
+    display: block;
+}

@@ -9,6 +9,7 @@ h6 {
     padding: 0;
     margin: 0;
 }
+
 body {
     background-color: var(--brand-color);
     color: var(--third-black-color);
@@ -16,16 +17,30 @@ body {
     letter-spacing: 0.03em;
     font-size: 14px;
 }
+
 li {
     list-style-type: none;
 }
+
 .container {
     margin-left: auto;
     margin-right: auto;
-    width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
+
+    @media screen and (min-width: 320px) {
+        width: 100%;
+    }
+
+    @include tablet {
+        width: 768px;
+    }
+
+    @include desktop {
+        width: 1200px;
+    }
 }
+
 .title {
     font-weight: 700;
     font-size: 36px;
@@ -34,14 +49,18 @@ li {
     color: var(--second-black-color);
     margin: 0 0 50px 0;
 }
+
 .img-block {
     display: block;
     width: 100%;
+    height: auto;
 }
+
 .text {
     line-height: 1.71;
     margin-top: 10px;
 }
+
 .visually-hidden {
     position: absolute;
     white-space: nowrap;

@@ -4,10 +4,31 @@
     padding-top: 60px;
     padding-bottom: 60px;
 
+    @include tablet {
+        padding-top: 0;
+    }
+
+    @include desktop {
+        padding-top: 0;
+    }
+
     &__logo {
         color: var(--brand-color);
-        display: inline-block;
+        display: block;
+        text-align: center;
         margin-bottom: 20px;
+
+        @include tablet {
+            color: var(--brand-color);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        @include desktop {
+            color: var(--brand-color);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
     }
 
     &__link-address {
@@ -27,20 +48,61 @@
 
     &__address-style {
         font-style: normal;
+        text-align: center;
+
+        @include tablet {
+            text-align: center;
+        }
+
+        @include desktop {
+            text-align: left;
+        }
     }
 
     &__contacts {
-        margin-top: 9px;
+        margin-top: 8px;
+
+        @include tablet {
+            margin-top: 8px;
+        }
+
+        @include desktop {
+            margin-top: 9px;
+        }
+    }
+}
+
+.logo-adress-tel {
+    @include tablet {
+        text-align: center;
+        margin-right: 165px;
+    }
+
+    @include desktop {
+        text-align: left;
+        margin-right: 0;
     }
 }
 
 .ground-footer__join {
-    margin-left: 70px;
+    @include desktop {
+        margin-left: 70px;
+    }
 }
 
 .container.footer {
-    display: flex;
-    align-items: baseline;
+    @include desktop {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.ground-footer__tablet {
+    @include tablet {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+    }
 }
 
 .ground-footer {
@@ -48,8 +110,29 @@
         color: var(--brand-color);
         text-transform: uppercase;
         margin-bottom: 20px;
+        margin-top: 60px;
         line-height: 1.14;
         font-weight: 700;
+        text-align: center;
+
+        @include tablet {
+            color: var(--brand-color);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            margin-top: 60px;
+            line-height: 1.14;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        @include desktop {
+            color: var(--brand-color);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.14;
+            font-weight: 700;
+            text-align: left;
+        }
     }
 
     &__social-web {
@@ -80,11 +163,21 @@
     }
 
     &__subscribe {
-        margin-left: 93px;
+        @include tablet {}
+
+        @include desktop {
+            margin-left: 93px;
+        }
+    }
+
+    &__label {
+        @include tablet {
+            text-align: center;
+        }
     }
 
     &__input {
-        width: 358px;
+        width: 100%;
         height: 50px;
         background: var(--backgroun-footer-color);
         border: 1px solid var(--subscribe-border-color);
@@ -93,10 +186,35 @@
         outline: none;
         color: var(--brand-color);
         padding-left: 16px;
-    
+        margin-bottom: 20px;
+
+        @include tablet {
+            width: 450px;
+            height: 50px;
+            background: var(--backgroun-footer-color);
+            border: 1px solid var(--subscribe-border-color);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+            border-radius: 4px;
+            outline: none;
+            color: var(--brand-color);
+            padding-left: 16px;
+        }
+
+        @include desktop {
+            width: 358px;
+            height: 50px;
+            background: var(--backgroun-footer-color);
+            border: 1px solid var(--subscribe-border-color);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+            border-radius: 4px;
+            outline: none;
+            color: var(--brand-color);
+            padding-left: 16px;
+        }
+
         &:focus {
-        border: 1px solid var(--accent-color);
-        } 
+            border: 1px solid var(--accent-color);
+        }
     }
 
     &__input placeholder {
@@ -107,13 +225,26 @@
 
     &__form {
         display: flex;
-        gap: 12px;
+        flex-direction: column;
         fill: var(--brand-color);
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            fill: var(--brand-color);
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            fill: var(--brand-color);
+        }
     }
 
     &__subscribe--btn {
         border: none;
-        width: 210.88px;
+        width: 200px;
         height: 50px;
         color: var(--brand-color);
         background-color: var(--accent-color);
@@ -130,6 +261,7 @@
         justify-content: center;
         cursor: pointer;
         transition: background-color var(--time-cubic-bezier);
+        margin: 0 auto;
 
         &:focus,
         &:hover {

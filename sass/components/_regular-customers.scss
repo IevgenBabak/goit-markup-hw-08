@@ -1,20 +1,37 @@
 .regular-customers {
     &__line {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
         gap: 30px;
+
+        @include desktop {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
     }
 
     &__link {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 170px;
-        height: 92px;
+        width: 100%;
+        height: 100%;
+
         border: 1px solid var(--customer-border-color);
         fill: var(--customer-border-color);
         border-radius: 4px;
         transition: fill var(--time-cubic-bezier), border-color var(--time-cubic-bezier);
+
+        @include tablet {
+            width: 226px;
+            height: 92px;
+        }
+
+        @include desktop {
+            width: 170px;
+            height: 92px;
+        }
 
         &:focus,
         &:active,
@@ -22,5 +39,18 @@
             fill: var(--accent-color);
             border-color: var(--accent-color);
         }
+    }
+}
+
+.regular-customers__logo {
+    height: 92px;
+    flex-basis: calc((100% - 30px) / 2);
+
+    @include tablet {
+        flex-basis: calc((100% - 60px) / 3);
+    }
+
+    @include desktop {
+        flex-basis: calc((100% - 150px) / 7);
     }
 }

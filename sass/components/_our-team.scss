@@ -1,6 +1,14 @@
 .our-team {
     background-color: var(--background-button-color);
-    padding: 94px 0;
+    padding: 60px 0;
+
+    @include tablet {
+        padding: 60px 0;
+    }
+
+    @include desktop {
+        padding: 94px 0;
+    }
 
     &__presentation {
         background-color: var(--brand-color);
@@ -9,17 +17,50 @@
         border-radius: 0px 0px 4px 4px;
     }
 
+    &__presentation:not(:last-child) {
+        margin-bottom: 30px;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
+
     &__title {
         font-size: 36px;
         line-height: 1.17;
         color: var(--second-black-color);
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
+
+        @include tablet {
+            margin-bottom: 30px;
+        }
+
+        @include desktop {
+            margin-bottom: 50px;
+        }
     }
 
     &__item {
-        display: flex;
-        gap: 30px;
+        display: block;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: 354px 354px;
+            grid-column-gap: 30px;
+            grid-row-gap: 30px;
+            flex-basis: calc((100% - 4 * 5px) / 2);
+        }
+
+        @include desktop {
+            display: flex;
+            gap: 30px;
+            flex-basis: calc((100% - 8 * 5px) / 4);
+        }
     }
 
     &__name {
@@ -33,7 +74,17 @@
 
     &__card {
         padding-top: 30px;
-        padding-bottom: 30px;
+        padding-bottom: 24px;
+
+        @include tablet {
+            padding-top: 30px;
+            padding-bottom: 24px;
+        }
+
+        @include desktop {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
     }
 
     &__txt {
@@ -47,5 +98,27 @@
         gap: 10px;
         justify-content: center;
         margin-top: 16px;
+    }
+}
+
+.social-link {
+    width: 44px;
+    height: 44px;
+    color: var(--customer-border-color);
+    background-color: var(--brand-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--time-cubic-bezier), background-color var(--time-cubic-bezier);
+
+    &:hover,
+    &:focus {
+        color: var(--brand-color);
+        background-color: var(--accent-color);
+    }
+
+    &__icon {
+        fill: currentColor;
     }
 }

@@ -3,38 +3,186 @@
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
+    padding-left: 25px;
 
-    &__item {
-        color: var(--third-black-color);
-        font-weight: 500;
-        text-decoration: none;
-        line-height: 1.14;
-        display: flex;
+    @include tablet {
+        display: block;
         align-items: center;
-        padding: 32px 0;
-        transition: color var(--time-cubic-bezier);
+        margin-left: auto;
+        margin-right: auto;
+        width: 1200px;
+        padding-top: 0;
+        padding-left: 96px;
+    }
 
-        &:hover .icon,
-        &:focus .icon {
-            fill: var(--accent-color);
-        }
+    @include desktop {
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1200px;
+        padding-left: 0;
+    }
+}
+
+.navigation>.container-contacts {
+    display: none;
+
+    @include tablet {
+        display: flex;
+    }
+}
+
+.container-contacts__item {
+    color: var(--third-black-color);
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.14;
+    display: flex;
+    align-items: center;
+    transition: color var(--time-cubic-bezier);
+
+    @include tablet {
+        font-size: 12px;
+        line-height: 1.17;
+        padding-bottom: 10px;
+    }
+
+    @include desktop {
+        font-size: 14px;
+        line-height: 1.14;
+        padding: 32px 0;
+    }
+
+    &:hover .icon,
+    &:focus .icon {
+        fill: var(--accent-color);
     }
 
     &.link {
         letter-spacing: 0.02em;
-        display: flex;
-        align-items: center;
+
+        @include tablet {
+            letter-spacing: 0.02em;
+        }
+
+        @include desktop {
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.container-contacts__item:not(:last-child) {
+    @include tablet {
+        padding-bottom: 10px;
+    }
+}
+
+.container-contacts__icon {
+    margin-right: 10px;
+    fill: var(--third-black-color);
+
+    @media screen and (min-width: 320px) {
+        display: none;
     }
 
-    &__icon {
+    @include tablet {
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+    }
+
+    @include desktop {
+        letter-spacing: 0.02em;
+        display: flex;
+        align-items: center;
         margin-right: 10px;
-        fill: var(--third-black-color);
+    }
+}
+
+.icon-envelope {
+    width: 14px;
+    height: 10px;
+
+    @include desktop {
+        width: 16px;
+        height: 12px;
+    }
+}
+
+.icon-smartphone {
+    width: 10px;
+    height: 14px;
+
+    @include desktop {
+        height: 12px;
+    }
+}
+
+.container-contacts__item.link.mailto {
+    @media screen and (min-width: 320px) {
+        font-size: 24px;
+        line-height: 1.17;
+        letter-spacing: 0.02em;
+        padding-top: 32px;
+        color: var(--third-black-color);
+    }
+}
+
+.container-contacts__item.link.tel {
+    @media screen and (min-width: 320px) {
+        font-size: 34px;
+        line-height: 1.18;
+        letter-spacing: 0.02em;
+        color: var(--accent-color);
     }
 }
 
 .container-contacts__mailito-tel {
-    display: flex;
     gap: 30px;
     justify-content: flex-end;
     align-items: center;
+
+    @include tablet {
+        gap: 30px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    @include desktop {
+        display: flex;
+        gap: 30px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.container-link__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 25px;
+}
+
+.container-link__item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+    position: relative;
+    border-right: 1px solid var(--modal-no-focus-color);
+    padding-right: 9.5px;
+    margin-right: 9.5px;
+    text-decoration: none;
+}
+
+.last-child {
+    border-right: none;
+}
+
+.container-link {
+    padding-top: 64px;
+    padding-bottom: 16px;
 }
