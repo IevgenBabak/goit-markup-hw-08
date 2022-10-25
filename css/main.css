@@ -1752,10 +1752,14 @@ textarea {
   -webkit-transition: border-color var(--time-cubic-bezier);
   transition: border-color var(--time-cubic-bezier);
 }
+@media screen and (min-width: 768px) {
+  textarea {
+    width: 370px;
+  }
+}
 @media screen and (min-width: 1200px) {
   textarea {
     width: 448px;
-    height: 120px;
   }
 }
 textarea:focus {
