@@ -63,10 +63,14 @@
         }
     }
 
+
     &__title {
         text-align: center;
         line-height: 1.14;
         font-size: 14px;
         color: var(--second-black-color);
+    @media screen and (min-width: 768px) {
+            text-align: left;
+        }
     }
 }

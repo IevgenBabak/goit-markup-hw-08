@@ -1,15 +1,12 @@
 .portfolio {
-    &__main {
-        padding-top: 60px;
+    padding-top: 60px;
         padding-bottom: 60px;
-
+    
         @include desktop {
             padding-top: 94px;
             padding-bottom: 94px;
         }
-    }
-
-    &__title {
+       &__title {
         font-size: 18px;
         line-height: 2;
         letter-spacing: 0.06em;
@@ -44,9 +41,10 @@
         }
 
         @include desktop {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            display: grid;
+                grid-template-columns: 370px 370px 370px;
+                grid-column-gap: 30px;
+                grid-row-gap: 30px;
         }
     }
 
