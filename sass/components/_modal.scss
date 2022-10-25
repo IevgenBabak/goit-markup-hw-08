@@ -25,12 +25,12 @@
     transition: transform var(--time-cubic-bezier);
 
     @include tablet {
-        width: 450px;
+        max-width: 450px;
         height: 609px;
     }
 
     @include desktop {
-        width: 528px;
+        max-width: 528px;
         height: 581px;
     }
 
@@ -177,7 +177,7 @@
 }
 
 textarea {
-    width: 100%;
+    width: 320px;
     height: 120px;
     border: 1px solid var(--modal-no-focus-color);
     border-radius: 4px;
