@@ -9,6 +9,11 @@
         @content;
     }
 }
+@mixin minimum {
+    @media screen and (min-width: 320px) {
+        @content;
+    }
+}
 
 @mixin retina {
 
