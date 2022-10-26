@@ -11,7 +11,7 @@
 }
 
 .modal {
-  max-width: 480px;
+  max-width: 450px;
   height: 609px;
   position: absolute;
   padding: 40px;
@@ -25,8 +25,7 @@
   transition: transform var(--time-cubic-bezier);
 
   @include tablet {
-    max-width: 450px;
-    height: 609px;
+   
   }
 
   @include desktop {

@@ -1552,7 +1552,7 @@ header {
 }
 
 .modal {
-  max-width: 480px;
+  max-width: 450px;
   height: 609px;
   position: absolute;
   padding: 40px;
@@ -1568,12 +1568,6 @@ header {
   transition: -webkit-transform var(--time-cubic-bezier);
   transition: transform var(--time-cubic-bezier);
   transition: transform var(--time-cubic-bezier), -webkit-transform var(--time-cubic-bezier);
-}
-@media screen and (min-width: 768px) {
-  .modal {
-    max-width: 450px;
-    height: 609px;
-  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
