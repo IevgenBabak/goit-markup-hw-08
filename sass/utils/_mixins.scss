@@ -9,11 +9,18 @@
         @content;
     }
 }
+
 @mixin minimum {
-    @media screen and (min-width: 320px) {
+    @media screen and (max-width: 355px) {
         @content;
     }
 }
+@mixin minimum-modal {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
+
 
 @mixin retina {
 

@@ -11,6 +11,10 @@
 }
 
 .modal {
+  @include minimum-modal {
+    max-width: 280px;
+  }
+
   max-width: 450px;
   height: 609px;
   position: absolute;
@@ -208,13 +212,16 @@ textarea {
 }
 
 .modal__check {
+
+@include minimum-modal {
+    max-width: 220px;
+   }
+
   display: flex;
   align-items: center;
   width: 370px;
 
-  
-
-    @include desktop {
+      @include desktop {
       width: 425px;
 }
 }
@@ -257,6 +264,9 @@ textarea {
 }
 
 .modal__checkbox-label {
+  @include minimum-modal {
+      display: block;
+    }
   display: flex;
   flex-wrap: wrap;
   align-items: center;

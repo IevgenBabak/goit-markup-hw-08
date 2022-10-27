@@ -132,12 +132,16 @@
 }
 
 .container-contacts__item.link.tel {
-    @media screen and (min-width: 320px) {
+    @include minimum {
+        font-size: 24px;
+    }
+
+ 
         font-size: 34px;
         line-height: 1.18;
         letter-spacing: 0.02em;
         color: var(--accent-color);
-    }
+    
 }
 
 .container-contacts__mailito-tel {

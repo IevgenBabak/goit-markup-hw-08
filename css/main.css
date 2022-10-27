@@ -337,12 +337,15 @@ li {
   }
 }
 
-@media screen and (min-width: 320px) {
+.container-contacts__item.link.tel {
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+@media screen and (max-width: 355px) {
   .container-contacts__item.link.tel {
-    font-size: 34px;
-    line-height: 1.18;
-    letter-spacing: 0.02em;
-    color: var(--accent-color);
+    font-size: 24px;
   }
 }
 
@@ -1569,6 +1572,11 @@ header {
   transition: transform var(--time-cubic-bezier);
   transition: transform var(--time-cubic-bezier), -webkit-transform var(--time-cubic-bezier);
 }
+@media screen and (max-width: 450px) {
+  .modal {
+    max-width: 280px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .modal {
     max-width: 528px;
@@ -1799,6 +1807,11 @@ textarea::placeholder {
           align-items: center;
   width: 370px;
 }
+@media screen and (max-width: 450px) {
+  .modal__check {
+    max-width: 220px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .modal__check {
     width: 425px;
@@ -1866,6 +1879,11 @@ textarea::placeholder {
   font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+@media screen and (max-width: 450px) {
+  .modal__checkbox-label {
+    display: block;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal__checkbox-label {
